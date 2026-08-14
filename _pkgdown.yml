@@ -28,7 +28,7 @@ home:
     - authors
     - dev
 reference:
-- title: ~
+- title:
   contents:
   - xds_analyze
   - xds_scaling
@@ -84,4 +84,3 @@ reference:
   - xds_pr2m
   - xds_pr2ni
   - pr2Lambda
-
