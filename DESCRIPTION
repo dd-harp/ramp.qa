@@ -1,0 +1,38 @@
+Package: ramp.qa
+Type: Package
+Title: A code qa for ramp.qa
+Version: 1.0.0-1 
+Authors@R: c(
+      person("David L.", "Smith", email = "smitdave@uw.edu", role = c("aut","cre"), comment = c(ORCID = "0000-0003-4367-3849")),
+      person("Juliet Nsumba", "Nakakawa", email = "juliet.nakakawa@mak.ac.ug", role = c("aut"), comment = c(ORCID = "0009-0006-3247-9230")),
+      person("Doreen Mbabazi", "Ssebuliba", email = "doreenresty@gmail.com", role = c("aut"), comment = c(ORCID="0000-0001-9137-7070"))
+    )
+Description: Reusable algorithms, encoded and rigorously tested, to implement dynamical systems models for malaria and other mosquito-transmitted pathogens. 
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+URL: https://dd-harp.github.io/ramp.qa/
+BugReports: https://github.com/dd-harp/ramp.qa/issues
+RoxygenNote: 7.3.3
+Roxygen: list(markdown=TRUE) 
+Remotes: 
+  github::dd-harp/ramp.qa
+RdMacros: Rdpack
+Depends:
+  ramp.xds,
+  stats
+Imports:
+  deSolve,
+  Rdpack
+Suggests:
+  viridisLite,
+  MASS,
+  expm,
+  knitr,
+  ggplot2,
+  data.table,
+  viridis,
+  rmarkdown,
+  testthat (>= 3.0.0)
+VignetteBuilder: knitr
+Config/testthat/edition: 3

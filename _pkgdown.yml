@@ -1,0 +1,30 @@
+template:
+  bootstrap: 5
+  math-rendering: mathjax
+url: https://dd-harp.github.io/ramp.viz/
+navbar:
+  left:
+  - text: Articles
+    menu:
+    - text: Getting Started
+      href: articles/GettingStarted.html
+  right:
+  - icon: fa-github
+    aria-label: GitHub
+    href: https://github.com/dd-harp/ramp.viz/
+home:
+  sidebar:
+    structure:
+    - links
+    - license
+    - community
+    - citation
+    - authors
+    - dev
+reference:
+- title: Connectivity
+  desc: |
+    Visualizing Connectivity
+  contents:
+  - plot_connectivity_sankey
+  - plot_connectivity_graph
