@@ -18,3 +18,4 @@ an \strong{\code{xds}} model object
 This function calls \link[ramp.xds:xds_solve]{ramp.xds::xds_solve} computes average annual values for the eir, the pr, and other
 interesting terms and returns a table. It is computed for a xds_obj of class "cohort"
 }
+\keyword{internal}
