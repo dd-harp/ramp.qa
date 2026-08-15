@@ -21,13 +21,13 @@ RdMacros: Rdpack
 Depends:
   stats
 Imports:
-  ramp.xds,
+  deSolve,
+  Rdpack,
   MASS,
   diagram,
-  expm,
+  expm, 
   plotly
 Suggests:
-  deSolve,
   viridisLite,
   knitr,
   data.table,
