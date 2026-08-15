@@ -35,3 +35,4 @@ generalized Macdonald model
 This is called for the models \code{macdonald},
 \code{GeM}, and \code{SI}
 }
+\keyword{internal}

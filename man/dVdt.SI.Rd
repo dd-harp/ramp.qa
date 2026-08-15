@@ -6,6 +6,13 @@
 \usage{
 \method{dVdt}{SI}(t, y, xds_obj, i)
 }
+\arguments{
+\item{t}{current simulation time}
+
+\item{y}{state vector}
+
+\item{xds_obj}{an \strong{\code{xds}} model object}
+}
 \value{
 a numeric \link{matrix}
 }

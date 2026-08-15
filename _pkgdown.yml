@@ -1,17 +1,23 @@
+url: https://dd-harp.github.io/ramp.qa/
 template:
   bootstrap: 5
   math-rendering: mathjax
-url: https://dd-harp.github.io/ramp.viz/
 navbar:
   left:
   - text: Articles
     menu:
-    - text: Getting Started
-      href: articles/GettingStarted.html
-  right:
-  - icon: fa-github
-    aria-label: GitHub
-    href: https://github.com/dd-harp/ramp.viz/
+    - text: Qualitative Analysis
+      href: articles/Qualitative.html
+    - text: Thresholds
+      href: articles/Thresholds.html
+    - text: Steady
+      href: articles/Steady.html
+    - text: Connectivity
+      href: articles/Connectivity.html
+    - text: Scaling Relationships
+      href: articles/Scaling.html
+  - text: Reference
+    href: reference/index.html
 home:
   sidebar:
     structure:
@@ -22,9 +28,59 @@ home:
     - authors
     - dev
 reference:
+- title:
+  contents:
+  - xds_analyze
+  - xds_scaling
+- title: Thresholds
+  desc: |
+    \eqn{R_0} and pseudo-thresholds
+  contents:
+  - make_calR
+  - make_calZ
+  - compute_Lambda_threshold
 - title: Connectivity
   desc: |
     Visualizing Connectivity
   contents:
+  - compute_HTC
+  - compute_VC
+  - make_VC_matrix
+  - get_VC
+  - get_VC_matrix
+  - make_HTC_matrix
+  - make_VC
   - plot_connectivity_sankey
   - plot_connectivity_graph
+  - plot_flow_sankey
+- title: Scaling
+  contents:
+  - xds_scaling
+  - xds_scaling_Lambda
+  - lines_eirVpr
+  - lines_eirpr
+  - add_eirpr_orbits
+  - add_orbits
+  - add_orbits_px
+  - xds_plot_eirVpr
+  - xds_plot_eirpr
+- title: Seasonality
+  desc: |
+    Index of Seasonal Dispersal
+  contents:
+  - compute_IoSD_F
+  - compute_IoSD_S
+  - compute_IoSD_pr
+- title: Metric Conversion
+  desc: |
+    Convert metrics and terms
+  contents:
+  - eir2fqZ
+  - fqZ2eir
+  - xds_eir2ni
+  - xds_eir2pr
+  - xds_pr2Lambda
+  - xds_pr2eir
+  - xds_pr2m
+  - xds_pr2ni
+  - pr2Lambda

@@ -20,3 +20,4 @@ relationships for mosquito density over 9 factors of 10, and average annual
 values for the eir, the pr, and other
 interesting terms and returns a table.
 }
+\keyword{internal}

@@ -23,13 +23,14 @@ Depends:
   stats
 Imports:
   deSolve,
-  Rdpack
+  Rdpack,
+  MASS,
+  diagram,
+  expm, 
+  plotly
 Suggests:
   viridisLite,
-  MASS,
-  expm,
   knitr,
-  ggplot2,
   data.table,
   viridis,
   rmarkdown,
