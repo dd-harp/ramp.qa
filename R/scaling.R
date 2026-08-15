@@ -26,7 +26,7 @@ xds_scaling = function(xds_obj, N=30){
 #' @importFrom utils tail
 #'
 #' @return an **`xds`** model object
-#'
+#' @keywords internal
 #' @export
 xds_scaling.eir = function(xds_obj, N=25){
   eir0 <- xds_obj$EIR_obj$eir
@@ -75,6 +75,7 @@ xds_scaling.eir = function(xds_obj, N=25){
 #'
 #' @importFrom utils tail
 #' @return **`xds`** xds_obj object
+#' @keywords internal
 #' @export
 xds_scaling.Lambda = function(xds_obj, N=30){
 

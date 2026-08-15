@@ -19,17 +19,17 @@ Remotes:
   github::dd-harp/ramp.qa
 RdMacros: Rdpack
 Depends:
-  ramp.xds,
   stats
 Imports:
-  deSolve,
-  Rdpack
-Suggests:
-  viridisLite,
+  ramp.xds,
   MASS,
+  diagram,
   expm,
+  plotly
+Suggests:
+  deSolve,
+  viridisLite,
   knitr,
-  ggplot2,
   data.table,
   viridis,
   rmarkdown,
