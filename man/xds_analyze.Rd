@@ -10,15 +10,5 @@ xds_analyze(xds_obj)
 \item{xds_obj}{an \strong{\code{xds}} model object}
 }
 \description{
-Besides solving, this function does several housekeeping tasks:
-\itemize{
-\item runs \link[ramp.xds:check_models]{ramp.xds::check_models}
-\item sets up the vector of times when outputs are wanted: see \link[ramp.xds:make_times_xde]{ramp.xds::make_times_xde} or \link[ramp.xds:make_times_dts]{ramp.xds::make_times_dts}
-\item sets up \eqn{y_0,} the initial values vector (see \link[ramp.xds:get_inits]{ramp.xds::get_inits})
-\item solves the system
-\item parses and attaches outputs (see \link[ramp.xds:parse_outputs]{ramp.xds::parse_outputs})
-}
-}
-\note{
-The function \code{\link[ramp.xds:xds_solve]{ramp.xds::xds_solve()}} dispatches on \code{xds_obj$xde}
+Compute the vectorial capacity and human transmitting capacity matrices.
 }
