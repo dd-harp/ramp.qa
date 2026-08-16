@@ -17,12 +17,12 @@ xds_scaling = function(xds_obj, N=30){
 
 #' @title Compute eir-pr scaling relationships
 #'
-#' @description This function calls [xds_solve] computes average annual values for the eir, the pr, and other
+#' @description This function calls [ramp.xds::xds_solve] computes average annual values for the eir, the pr, and other
 #' interesting terms and returns a table. It is computed for a xds_obj of class "cohort"
 #'
 #' @inheritParams xds_scaling
 #'
-#' @importFrom ramp.xds change_mean_forcing xds_solve
+#' @importFrom ramp.xds change_mean_forcing xds_solve get_XH_orbits
 #' @importFrom utils tail
 #'
 #' @return an **`xds`** model object
@@ -40,7 +40,7 @@ xds_scaling.eir = function(xds_obj, N=25){
     xds_obj <- ramp.xds::change_mean_forcing(dEIR[i], xds_obj, 1)
     xds_obj <- ramp.xds::xds_solve(xds_obj, times=times)
 
-    XH <- ramp.xds::get_XH_out(xds_obj, 1)
+    XH <- ramp.xds::get_XH_orbits(xds_obj, 1)
 
     stable_orbits[[i]] = list()
 
@@ -66,7 +66,7 @@ xds_scaling.eir = function(xds_obj, N=25){
 
 #' @title Compute scaling relationships from mosquito emergence through PfPR
 #'
-#' @description This function calls [xds_solve] to get the scaling
+#' @description This function calls [ramp.xds::xds_solve] to get the scaling
 #' relationships for mosquito density over 9 factors of 10, and average annual
 #' values for the eir, the pr, and other
 #' interesting terms and returns a table.
@@ -74,6 +74,7 @@ xds_scaling.eir = function(xds_obj, N=25){
 #' @inheritParams xds_scaling
 #'
 #' @importFrom utils tail
+#' @importFrom ramp.xds change_mean_forcing xds_solve
 #' @return **`xds`** xds_obj object
 #' @keywords internal
 #' @export
@@ -116,6 +117,7 @@ xds_scaling.Lambda = function(xds_obj, N=30){
 #' @param xds_obj a **`ramp.xds`** xds_obj object
 #' @param scaling a list with stored values
 #'
+#' @importFrom ramp.xds get_XH_orbits get_MY_orbits
 #' @return a pair of values
 #' @export
 xds_scaling_Lambda = function(Lambda, xds_obj, scaling){
@@ -125,8 +127,8 @@ xds_scaling_Lambda = function(Lambda, xds_obj, scaling){
   xds_obj <- ramp.xds::change_mean_forcing(Lambda, xds_obj, 1)
   xds_obj <- ramp.xds::xds_solve(xds_obj, times=times)
 
-  XH <- ramp.xds::get_XH_out(xds_obj, 1)
-  MY <- ramp.xds::get_MY_out(xds_obj, 1)
+  XH <- ramp.xds::get_XH_orbits(xds_obj, 1)
+  MY <- ramp.xds::get_MY_orbits(xds_obj, 1)
 
   orbits = list()
 
@@ -176,6 +178,7 @@ xds_scaling_Lambda = function(Lambda, xds_obj, scaling){
 
 #' @title Get High/Low Values for Lambda
 #' @param xds_obj a **`ramp.xds`** xds_obj object
+#' @importFrom ramp.xds get_HTC get_H
 #' @return a pair of values
 #' @export
 compute_Lambda_threshold = function(xds_obj){
@@ -188,7 +191,7 @@ compute_Lambda_threshold = function(xds_obj){
   eip <- xds_obj$MY_obj[[1]]$eip
   VC <- f^2*q^2/g^2*exp(-g*eip)
   H <- get_H(xds_obj)
-  D <- HTC(xds_obj, 1)
+  D <- get_HTC(xds_obj, 1)
   R <- b*VC*D/H
   return(1/R)
 }
