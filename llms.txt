@@ -42,6 +42,8 @@ Visualizing Connectivity
   : Plot Connectivity as a Sankey Diagram
 - [`plot_connectivity_graph()`](https://dd-harp.github.io/ramp.qa/reference/plot_connectivity_graph.md)
   : Plot Connectivity
+- [`plot_kernel_graph()`](https://dd-harp.github.io/ramp.qa/reference/plot_kernel_graph.md)
+  : Plot Kernel
 - [`plot_flow_sankey()`](https://dd-harp.github.io/ramp.qa/reference/plot_flow_sankey.md)
   : Plot Connectivity as a Sankey Diagram
 
