@@ -52,6 +52,7 @@ reference:
   - make_VC
   - plot_connectivity_sankey
   - plot_connectivity_graph
+  - plot_kernel_graph
   - plot_flow_sankey
 - title: Scaling
   contents:

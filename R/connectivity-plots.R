@@ -15,6 +15,7 @@
 plot_connectivity_graph = function(M, xy=NULL, clrs = "black", scl=1, labels=NULL, lab.cex=0.6, arr.pos = 0.33, mn=0.02){
 
   dm = dim(M)[1]
+
   if(length(clrs) !=dm) clrs = viridisLite::turbo(dm)
   if(is.null(xy)){
     theta = seq(0, 2*pi, length.out = dm+1)[-1]
@@ -46,6 +47,53 @@ plot_connectivity_graph = function(M, xy=NULL, clrs = "black", scl=1, labels=NUL
   text(xy$x, xy$y, labels, cex=lab.cex)
 
   points(xy, cex=scl*sqrt(colSums(M)), col = clrs, lwd=diag(M)*scl)
+
+  return(invisible())
+}
+
+#' Plot Kernel
+#'
+#' @param M a connectivity matrix
+#' @param xy locations of the patches
+#' @param clrs colors
+#' @param scl scaling for graph thickness
+#' @param labels a set of labels
+#' @param lab.cex size of the labels
+#' @param arr.pos position of the arrow
+#' @param mn plot if weight is greater than mn
+#' @importFrom diagram curvedarrow
+#' @importFrom graphics points text plot
+#' @returns invisible
+#' @export
+plot_kernel_graph = function(M, xy=NULL, clrs = "black", scl=1, labels=NULL, lab.cex=0.6, arr.pos = 0.33, mn=0.02){
+
+  dm = dim(M)[1]
+
+  if(length(clrs) !=dm) clrs = viridisLite::turbo(dm)
+  if(is.null(xy)){
+    theta = seq(0, 2*pi, length.out = dm+1)[-1]
+    y = sin(theta)
+    x = cos(theta)
+    xy = data.frame(x=x, y=y)
+  }
+
+  plot(xy, xlim = range(xy$x,-0.1, 0.1)*1.3, ylim = range(xy$y, -0.1, 0.1)*1.3,
+       xaxt = "n", yaxt="n", xlab="", ylab="", pch=21,
+       cex=scl, lwd=scl, col = clrs)
+
+  for(i in 1:dm){
+    for(j in 1:dm){
+      if(i!=j & scl*M[j,i]>mn){
+        xyi = as.numeric(xy[i,])
+        xyj = as.numeric(xy[j,])
+
+        curvedarrow(xyi, xyj, lwd=scl*M[j,i],
+                    arr.type = "triangle", arr.length=.25,
+                    curve=.02, arr.pos = arr.pos, lcol = clrs[i])
+      }}}
+
+  points(xy, cex = scl, col=clrs)
+
   return(invisible())
 }
 
